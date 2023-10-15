@@ -6,7 +6,13 @@ Home
 <h1>Home</h1>
 
 <div class="searchbar">
-    <input type="text" placeholder="Search..">
+    <input type="text" id="ytsearch_bar" placeholder="Search..">
     <button type="submit"><i class="fa fa-search"></i>Search</button>
+</div>
+<p>{{youtube_search(document.getElementById('ytsearch_bar').value)}}</p>
+<div class="youtube-videos">
+    <iframe id="ytplayer" type="text/html" width="640" height="360"
+            src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+            frameborder="0"></iframe>
 </div>
 {% endblock %}
