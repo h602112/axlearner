@@ -1,0 +1,5 @@
+{% for video in videos %}
+    <div>
+        <a href="https://www.youtube.com/watch?v={{ video.videoId }}" target="_blank">{{ video.title }}</a>
+    </div>
+{% endfor %}

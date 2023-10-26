@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+
 {% block title %}
 Home
 {% endblock %}
@@ -6,13 +7,16 @@ Home
 <h1>Home</h1>
 
 <div class="searchbar">
-    <input type="text" id="ytsearch_bar" placeholder="Search..">
-    <button type="submit"><i class="fa fa-search"></i>Search</button>
+    <form hx-post="/search" hx-target="#results"   hx-indicator="#loading">
+        <input type="text" name="query" id="queryInput" placeholder="Search YouTube...">
+        <button type="submit">Search</button>
+        
+    </form>
+    
+    <div id="loading" style="display:none;">Loading...</div>
+    <div id="results"></div>
+    
 </div>
-<p>{{youtube_search(document.getElementById('ytsearch_bar').value)}}</p>
-<div class="youtube-videos">
-    <iframe id="ytplayer" type="text/html" width="640" height="360"
-            src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-            frameborder="0"></iframe>
-</div>
+
+
 {% endblock %}
